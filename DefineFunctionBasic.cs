@@ -34,7 +34,13 @@ namespace ExcelFunctionUnit
 
         private static string GetSubKeyName(Type type, string subKeyName)
         {
-            return string.Format("CLSID\\{{{0}}}\\{1}", type.GUID.ToString().ToUpper(), subKeyName);
+            System.Text.StringBuilder s = new System.Text.StringBuilder();
+            s.Append(@"CLSID\{");
+            s.Append(type.GUID.ToString().ToUpper());
+            s.Append(@"}\");
+            s.Append(subKeyName);
+            return s.ToString();
+            //return string.Format("CLSID\\{{{0}}}\\{1}", type.GUID.ToString().ToUpper(), subKeyName);
         }
 
         /// <summary>

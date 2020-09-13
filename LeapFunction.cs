@@ -7,11 +7,15 @@ using System.Threading.Tasks;
 
 namespace ExcelFunctionUnit
 {
-    [Guid("3BC99D1E-8D10-4096-B4F8-530BED98098C")]
+    [Guid("6234288A-B724-481D-9D71-81279013B46D")]
     [ClassInterface(ClassInterfaceType.AutoDual)]
     [ComVisible(true)]
     class LeapFunction:DefineFunctionBasic 
     {
+        public LeapFunction():base()
+        {
+
+        }
         public bool IsLeap(int year)
         {
             if (year % 4 == 0 && year % 100 != 0)
